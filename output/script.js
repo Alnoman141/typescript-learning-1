@@ -192,18 +192,36 @@ interface Rx {
 let rx: Rx = { x: 1 };
 console.log(rx);
 */
+/*
 class Student {
-    constructor(firstName, middleName, lastName) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
+    fullName: string;
+    constructor(
+        public firstName: string,
+        public middleName: string,
+        public lastName: string
+    ){
         this.fullName = this.firstName + " " + this.middleName + " " + this.lastName;
     }
 }
-function gretter(person) {
+
+interface Person {
+    firstName: string;
+    lastName: string
+}
+
+function gretter(person: Person){
     return "Hello, " + person.firstName + " " + person.lastName;
 }
-let user = new Student("Abdullah", "Al", "Noman");
-console.log(user);
+
+let user = new Student("Abdullah", "Al" , "Noman");
 let hello = gretter(user);
+
 console.log(hello);
+*/
+function gretter(fn) {
+    fn('Hello World');
+}
+function printToConsole(s) {
+    console.log(s);
+}
+gretter(printToConsole);

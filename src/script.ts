@@ -205,6 +205,7 @@ let rx: Rx = { x: 1 };
 console.log(rx);
 */
 
+/*
 class Student {
     fullName: string;
     constructor(
@@ -229,5 +230,15 @@ let user = new Student("Abdullah", "Al" , "Noman");
 let hello = gretter(user);
 
 console.log(hello);
+*/
 
+function gretter(fn: (a: string) => void) {
+    fn('Hello World');
+}
+
+function printToConsole(s: string){
+    console.log(s);
+}
+
+gretter(printToConsole);
 
