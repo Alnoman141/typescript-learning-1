@@ -166,6 +166,68 @@ function start( arg: string | string[] | (() => string) | { s: string }): string
 };
 */
 
+/*
+type Shape =
+  | { kind: "circle"; radius: number }
+  | { kind: "square"; x: number }
+  | { kind: "triangle"; x: number; y: number };
+ 
+function area(s: Shape) {
+  if (s.kind === "circle") {
+    return Math.PI * s.radius * s.radius;
+  } else if (s.kind === "square") {
+    return s.x * s.x;
+  } else {
+    return (s.x * s.y) / 2;
+  }
+}
 
+function height(s: Shape){
+    if(s.kind === 'circle'){
+        return 2 * s.radius;
+    } else {
+        return s.x;
+    }
+}
+
+const newArea = area({ kind: 'circle', radius: 3 });
+const newHeight = height({ kind: 'circle', radius: 3 });
+
+console.log('Area = ' + newArea + ' & height = ' + newHeight);
+*/
+
+/*
+interface Rx {
+    readonly x: number;
+}
+
+let rx: Rx = { x: 1 };
+console.log(rx);
+*/
+
+class Student {
+    fullName: string;
+    constructor(
+        public firstName: string,
+        public middleName: string,
+        public lastName: string
+    ){
+        this.fullName = this.firstName + " " + this.middleName + " " + this.lastName;
+    }
+}
+
+interface Person {
+    firstName: string;
+    lastName: string
+}
+
+function gretter(person: Person){
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+let user = new Student("Abdullah", "Al" , "Noman");
+let hello = gretter(user);
+
+console.log(hello);
 
 
